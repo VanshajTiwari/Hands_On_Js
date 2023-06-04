@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital CLock</title>
+    <style>
+      *{
+        padding:0px;
+        margin:0px;
+        box-sizing: border-box;
+      }
+      .modal{
+        z-index: 10;
+        width:100%;
+        height:100%;
+        
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0,0,195,0.4);
+      }
+      .modal div{
+        animation:show 1s;
+    
+       min-width: 100px;
+       width:30rem;
+       height: 50%;
+       box-shadow:0px 0px 10px 0.2px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+      }
+      @keyframes show {
+        0%{
+          transform: scale(0);
+        }
+        50%{
+          transform: scale(1.2);
+        }
+        100%{
+          transform: scale(1);
+        }
+      }
+      .modal div input{
+        border-radius: 10px;
+        border: 3px solid black;
+        margin: 1rem;
+        min-width: 200px;
+        width:20rem;
+        height:3rem;
+        font-size: 1.2rem;
+        padding-inline-start: 1rem;
+      }
+      .remover{
+        z-index: 1000;
+        width:100px;
+        height:200px;
+        position: absolute;
+      }
+    </style>
+</head>
+<body>
+  <div class="modal">
+    
+      <div action="">
+        <input type="text" class="name" required>
+        <input type="text" class="name" required>
+        <input type="text" class="name" required>
+        <input type="text" class="name" required>
+        <button class="btn">click</button>
+      </div>
+       
+    
+  </div>
+      
+  <div class="demo"></div>
+  
+  
+  <button class="remover">Click Me REMOVE</button>
+  
+  
+  
+  </body>
+  <script>
+    let remover=document.querySelector(".remover");
+   
+    const main=document.querySelector(".modal");
+    let demodiv=document.querySelector(".demo");
+    let mssg=document.createElement("div");
+    mssg.style.backgroundColor="red";
+    mssg.style.width="100px";
+    mssg.style.height="100px";
+    mssg.innerHTML="Hello Im creted";
+    mssg.style.fontSize="20px";
+    main.prepend(mssg);
+    main.append(mssg.cloneNode(true));
+    main.before(mssg.cloneNode(true));
+    main.after(mssg.cloneNode(true));
+    remover.addEventListener('click',function(){mssg.remove()});
+
+    let btn=document.querySelector(".btn");
+    btn.addEventListener('click',checker);
+    function printo(){
+    
+    //  form.preventdefault();
+      console.log("ehelloo");
+    }
+    var obj={name:"",name2:"",name3:"",name4:"",namedisplay:function(){console.log()}}
+    function checker(){
+      let Arr=new Array();
+      dat=document.querySelectorAll(".name");
+      dat.forEach(element => {
+            Arr.push(element.value);       
+      });
+      let obj1={}
+      obj1.name=Arr[0];
+      obj1.name2=Arr[1];
+      obj1.name3=Arr[2];
+      obj1.name4=Arr[3];
+      console.log(obj1);
+    }
+  
+  </script>
+</html>

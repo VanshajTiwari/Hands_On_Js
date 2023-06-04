@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const abc0=function(country){
+        fetch(`https://restcountries.com/v3.1/name/${country}`).
+        then(res=>res.json()).
+        then(res=>console.log(res["0"]))
+    }
+const abc= async function(country){
+    
+    try{
+    const res0=await fetch(`https://restcountries.com/v3.1/name/${country}`);
+    if(!res0.ok){
+        throw new Error(`${res0.status}`)
+    
+    }
+    const [res]=await res0.json();  
+    console.log(res);  
+    }
+    catch(Err){
+        console.error("Error Status :"+Err.message);
+        throw Err;
+        }
+}
+    abc0("india");
+    abc("pakistan"); 
+    abc("USA");// Await uses
+    abc().then((res)=>{console.log("hello here")}).catch((err)=>console.log("ERRRRRROr"));
+    console.log("I Will be Printed First") 
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .inp{
+            height:4rem;
+            width:20rem;
+            font-size: 20px;
+            margin: 1em;
+        }
+        form{
+            box-shadow: 0px 0px 10px;
+            border: 10px solid red;
+            padding:4rem 5rem;
+            border-radius: 1rem;
+            position:absolute;
+            top:20%;
+            left: 40%;
+            width:20rem;
+            max-height:600px;
+            display: flex;
+            flex-direction: column;
+        }
+        label{
+            position: relative;
+            pointer-events: none;
+            font-size: 20px;
+            left:2rem;
+        }
+        input:focus~label{
+            transform: translateX(10p);
+        }
+        label::before{
+            content: "";
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="">
+           
+            <input class="inp" type="text" name="firstName" required>
+            <label for="firstName">firstName</label>
+            <input class="inp" type="text" name="lastName" required>
+            <label for="lastName">lastName</label>
+            <input class="inp" type="text" name="fullName" required>
+            <label for="FullName">fullName</label>
+            <input class="inp" type="text" name="userName" required>
+            <label for="userName">userName</label>
+            <label for="gender">gender</label>
+            <select class="inp" name="gender" id="">
+                <option value="">Male</option>
+                <option value="">Female</option>
+                <option value="">Other</option>
+            </select>
+            <label for="Email">Email</label>
+            <input class="inp" type="text" name="Email" required>
+            <label for="Password">Password</label>
+            <input class="inp" type="text" name="Password" required>
+            <input class="inp" type="submit">
+        </form>
+    </div>
+    
+</body>
+</html>

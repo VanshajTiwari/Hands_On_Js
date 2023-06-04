@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location Object</title>
+</head>
+<body>
+    <h1 id="demo"> hello</h1>
+    <h1 id="demo1"></h1>
+    <button id="clicki"> click me</button>
+    <button id="clicko"> click me</button>
+</body>
+<script>
+function newDoc(){
+    location.assign("https://www.instagram.com/");
+}
+function writeri(){document.querySelector("#demo1").innerHTML=location.port;}
+window.document.querySelector("#clicko").addEventListener('click',newDoc);
+window.document.querySelector("#clicki").addEventListener('click',writeri);
+</script>
+</html>
